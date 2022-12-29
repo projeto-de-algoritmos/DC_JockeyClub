@@ -1,6 +1,7 @@
 import "./styles/app.css";
 import React from "react";
 import { useState } from "react";
+import Ranking from "./components/ranking";
 
 function App() {
   const [mode, setMode] = useState(1);
@@ -10,8 +11,9 @@ function App() {
       <header>
         <span onClick={() => setMode(1)}>menu</span>
       </header>
+      {mode === 1 && (
       <div className="main-menu">
-        {mode === 1 && (
+        
           <div className="choose-div">
             <h3> Escolha a função que voce deseja</h3>
             <div className="options">
@@ -31,11 +33,11 @@ function App() {
               </span>
             </div>
           </div>
+          </div>
         )}
-        {mode === 2 && <span>Kevin</span>}
+        {mode === 2 && <Ranking />}
         {mode === 3 && <span>Ailton</span>}
       </div>
-    </div>
   );
 }
 
