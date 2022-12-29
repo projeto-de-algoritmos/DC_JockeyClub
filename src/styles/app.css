@@ -1,0 +1,23 @@
+.choose-div {
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30%
+}
+
+.main-menu {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
