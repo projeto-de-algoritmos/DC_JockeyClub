@@ -16,20 +16,20 @@ export const cavalos = [
   },
 ];
 
-export function func(userPriority, candidatePriority) {
+export function func(cavalos, priorityList) {
   var array = [];
-  var tmp = Array(userPriority.length);
-  console.log(userPriority);
+  var tmp = Array(cavalos.length);
+  console.log(cavalos);
 
-  for (var index = 0; index < userPriority.length; index++) {
-    tmp[userPriority[index] - 1] = index + 1;
+  for (var index = 0; index < cavalos.length; index++) {
+    tmp[cavalos[index] - 1] = index + 1;
   }
-  userPriority = tmp;
+  cavalos = tmp;
 
-  for (var i in candidatePriority) {
-    array.push(userPriority[candidatePriority[i] - 1]);
+  for (var i in priorityList) {
+    array.push(cavalos[priorityList[i] - 1]);
   }
-  console.log("userPriority", userPriority);
+  console.log("userPriority", cavalos);
   console.log("array", array);
   return array;
 }
