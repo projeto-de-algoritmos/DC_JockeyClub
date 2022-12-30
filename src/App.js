@@ -2,7 +2,7 @@ import "./styles/app.css";
 import React from "react";
 import { useState } from "react";
 import Ranking from "./components/ranking";
-import Corrida from "./components/index";
+import Corrida from "./components/aposta";
 
 function App() {
   const [mode, setMode] = useState(1);

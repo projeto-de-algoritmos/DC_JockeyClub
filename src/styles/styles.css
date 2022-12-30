@@ -99,3 +99,13 @@
 .rangeslider__fill {
   background-color: #f15a33 !important;
 }
+
+.slider {
+  width: 100px;
+  height: 10px; 
+  background: #000;
+  color: #fff;
+  font-family: "LasVegas-Jackpot";
+  font-size: 2rem;
+  text-align: left;
+}
