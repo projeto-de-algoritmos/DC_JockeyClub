@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Slider from "@mui/material/Slider";
 
-import { winner, cavalos } from "../../services/winner";
+import { winner, cavalos } from "../../src/services/winner";
 
-import "./styles.css";
+import "../styles/styles.css";
 
-const Corrida =() => {
+const Corrida = () => {
   const [questions] = useState([
     {
       id: 1,
@@ -193,8 +193,6 @@ const Corrida =() => {
     setPriorityList2(updatedAnswers2);
   }, [answers, answers2]);
 
-  // useEffect(() => console.log(priorityList), [priorityList]);
-
   return (
     <div className="form-page">
       <h1
@@ -340,6 +338,7 @@ const Corrida =() => {
         <Modal.Body>
           {player ? (
             <div className="modal-body-container">
+              <h2>{player}</h2>
               <div>
                 {player != "Empate" ? (
                   <img
@@ -349,7 +348,6 @@ const Corrida =() => {
                 ) : (
                   <img src="https://s.dicio.com.br/empate.jpg" alt="" />
                 )}
-                <h2>{player}</h2>
               </div>
               {/* {cavalos[0].priorityList.map((cavalo, index) => {
                 return <span>Posição{cavalo}</span>;
@@ -372,7 +370,6 @@ const Corrida =() => {
       </Modal>
     </div>
   );
-}
+};
 
 export default Corrida;
-
