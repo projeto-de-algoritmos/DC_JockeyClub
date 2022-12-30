@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { cavalos } from "../utils/mocks";
 
+import "../styles/ranking.css";
 
 const Ranking = () => {
   const [horseToSearch, setHorseToSearch] = useState(undefined);
@@ -67,28 +68,56 @@ const Ranking = () => {
 
   useEffect(() => {}, [horseToSearch]);
   return (
-    <div className="ranking">
-      <h1>Competidores</h1>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        {cavalos.map((cavalo, index) => {
-          return (
-            <div key={index} style={{ display: "flex" }}>
-              <span>{cavalo.nome + ": " + cavalo.volta} </span>
+    <div className="ranking-container">
+      <div className="ranking-table">
+        <div className="horse-list">
+          <h1 className="ranking-title" style={{ marginBottom: "20px" }}>
+            Competidores
+          </h1>
+          {cavalos.map((cavalo, index) => {
+            return (
+              <div key={index} style={{ display: "flex" }}>
+                <span>{cavalo.nome + ": " + cavalo.volta} </span>
+              </div>
+            );
+          })}
+        </div>
+        <div className="search-horse">
+          <h1 className="ranking-title">Escolha a posição</h1>
+          <div className="input-div">
+            <input
+              className="input-search"
+              type="number"
+              placeholder="Posição"
+              onChange={(event) => {
+                setHorseToSearch(event.target.value);
+              }}
+              min={1}
+            ></input>
+            <button
+              className="input-button"
+              onClick={() => search(horseToSearch)}
+            >
+              Buscar
+            </button>
+          </div>
+
+          {horseFound?.nome !== "" && (
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {horseFound?.img && (
+                <img
+                  alt=""
+                  width={200}
+                  height={200}
+                  src={horseFound?.img}
+                ></img>
+              )}
+              {horseFound?.nome && <span>Cavalo: {horseFound?.nome} </span>}
+              {horseFound?.volta && <span> Tempo: {horseFound?.volta} s</span>}
             </div>
-          );
-        })}
+          )}
+        </div>
       </div>
-      <div className="search-horse">
-        <h2>Escolha a posição</h2>
-        <input
-          type="number"
-          onChange={(event) => {
-            setHorseToSearch(event.target.value);
-          }}
-        ></input>
-        <button onClick={() => search(horseToSearch)}>Buscar</button>
-      </div>
-      {horseFound?.nome !== "" && <span>{horseFound?.nome}</span>}
     </div>
   );
 };

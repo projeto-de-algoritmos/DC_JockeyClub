@@ -1,0 +1,53 @@
+.ranking-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  padding: 40px;
+}
+
+.ranking-title {
+  font-weight: 600;
+}
+
+.ranking-table {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.horse-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-horse {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-div {
+  display: flex;
+  gap: 10px;
+}
+
+.input-search {
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  background-color: #1976d2;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  color: white;
+}
+.input-search::placeholder {
+  color: white;
+}
+
+.input-button {
+  cursor: pointer;
+  height: 30px;
+  padding: 5px;
+  background-color: green;
+  border-radius: 10px;
+  border: none;
+  color: white;
+}

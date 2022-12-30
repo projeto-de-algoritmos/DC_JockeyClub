@@ -9,29 +9,37 @@ function App() {
 
   return (
     <div>
-      <header>
-        <span onClick={() => setMode(1)}>menu</span>
+      <header className="header-dc">
+        <h2>FGA - UnB</h2>
+        <h2>Divide and conquer</h2>
+        {mode !== 1 && (
+          <span style={{ cursor: "pointer" }} onClick={() => setMode(1)}>
+            Voltar ao menu principal
+          </span>
+        )}
+        {mode === 1 && <span>Projeto de Algotimos 2/2022</span>}
       </header>
       {mode === 1 && (
         <div className="main-menu">
           <div className="choose-div">
-            <h3> Escolha a função que voce deseja</h3>
+            <h3> Escolha o modo que voce deseja</h3>
             <div className="options">
-              <span
+              <button
+                className="option-button"
                 onClick={() => {
                   setMode(2);
                 }}
               >
-                Verificar a posição dos cavalos
-              </span>
-              <span
+                Buscar a posição dos cavalos na última corrida
+              </button>
+              <button
+                className="option-button"
                 onClick={() => {
                   setMode(3);
                 }}
               >
-                Verificar histórico de posições dos cavalos e buscar qual foi
-                melhor em qual volta
-              </span>
+                Disputa de melhores palpites
+              </button>
             </div>
           </div>
         </div>
