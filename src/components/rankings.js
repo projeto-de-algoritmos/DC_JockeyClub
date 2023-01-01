@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { corridas } from "../utils/mocks";
 
 import "../styles/ranking.css";
+import App from "./menu";
 
 const Rankings = () => {
   const [horseToSearch, setHorseToSearch] = useState(undefined);
@@ -73,6 +74,8 @@ const Rankings = () => {
 
   useEffect(() => {}, [horseToSearch]);
   return (
+    <>
+      <App props={{ mode: 3 }}></App>
     <div className="ranking-container">
       <div className="ranking-table">
 
@@ -134,6 +137,7 @@ const Rankings = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -4,9 +4,9 @@ import Slider from "@mui/material/Slider";
 
 import { winner } from "../services/winner";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import "../styles/styles.css";
+import App from "./menu";
 
 const Corrida = () => {
   const [cavalos] = useState([
@@ -170,14 +170,6 @@ const Corrida = () => {
   }
 
   const reinitialize = () => {
-    // console.log("reinicializando");
-    // setIsModalOpen(false);
-    // result.map((answer) => {
-    //   answer.priority = 5;
-    // });
-    // result2.map((answer) => {
-    //   answer.priority = 5;
-    // });
     window.location.reload();
   };
 
@@ -197,6 +189,7 @@ const Corrida = () => {
 
   return (
     <>
+      <App props={{ mode: 4 }}></App>
       <div className="form-page">
         <h1
           style={{
