@@ -7,6 +7,8 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import "../styles/styles.css";
 import App from "./menu";
+import { cavalos as cavalosPos } from "../services/winner";
+console.log("cavalosPos", cavalosPos);
 
 const Corrida = () => {
   const [cavalos] = useState([
@@ -244,7 +246,7 @@ const Corrida = () => {
                   >
                     1
                   </p>
-                  <div style={{ width: "300px", marginRight: "5px" }}>
+                  <div style={{ width: "300px", marginRight: "10px" }}>
                     <Slider
                       valueLabelDisplay="auto"
                       style={{
@@ -274,6 +276,26 @@ const Corrida = () => {
                       }}
                     />
                   </div>
+                  <p
+                    style={{
+                      fontSize: "1.125rem",
+                      marginBottom: 0,
+                      marginRight: "80px",
+                    }}
+                  >
+                    10
+                  </p>
+
+                  <p
+                    style={{
+                      fontSize: "1.125rem",
+                      marginBottom: 0,
+                      marginRight: "10px",
+                    }}
+                  >
+                    1
+                  </p>
+
                   <div style={{ width: "300px" }}>
                     <Slider
                       valueLabelDisplay="auto"
@@ -331,9 +353,15 @@ const Corrida = () => {
         onClose={() => setIsModalOpen(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "20px",
+          padding: "40px",
+        }}
       >
-        <Box sx={{ backgroundColor: "white", opacity: 0.8 }}>
+        <Box sx={{ backgroundColor: "white", width: "600px" }}>
           {player ? (
             <div className="modal-body-container">
               <h2>{player}</h2>
@@ -346,6 +374,16 @@ const Corrida = () => {
                 ) : (
                   <img src="https://s.dicio.com.br/empate.jpg" alt="" />
                 )}
+              </div>
+              <div style={{ marginTop: "-20px" }}>
+                <h3>Classificação da corrida</h3>
+                {cavalosPos[0].priorityList.map((item, index) => {
+                  return (
+                    <p>
+                      {item}°- {cavalos[index].label} 
+                    </p>
+                  );
+                })}
               </div>
             </div>
           ) : (
