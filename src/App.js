@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import Ranking from "./components/ranking";
 import Corrida from "./components/aposta";
+import Rankings from "./components/rankings";
 
 function App() {
   const [mode, setMode] = useState(1);
@@ -38,6 +39,14 @@ function App() {
                   setMode(3);
                 }}
               >
+                Buscar a posição dos cavalos em qualquer corrida
+              </button>
+              <button
+                className="option-button"
+                onClick={() => {
+                  setMode(4);
+                }}
+              >
                 Disputa de melhores palpites
               </button>
             </div>
@@ -45,7 +54,8 @@ function App() {
         </div>
       )}
       {mode === 2 && <Ranking />}
-      {mode === 3 && <Corrida />}
+      {mode === 3 && <Rankings />}
+      {mode === 4 && <Corrida />}
     </div>
   );
 }
